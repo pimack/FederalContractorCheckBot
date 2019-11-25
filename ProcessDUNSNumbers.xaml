@@ -75,7 +75,12 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,636" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch sap2010:Annotation.AnnotationText="If an exception is thrown, the workflow kills the Internet explorer process to prepare for next number execution." DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,636" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <TryCatch.Try>
                 <Sequence sap:VirtualizedContainerService.HintSize="376,409" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
@@ -84,20 +89,30 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[String.Format(&quot;Processing DUNS Number {0}&quot;, item)]" />
-                  <ui:Replace BuilderPattern="\s" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[item]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;WHITESP&quot;,&quot;OperationName&quot;:&quot;Whitespace&quot;,&quot;OperationValue&quot;:&quot;\\s&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="\s" RegexOption="IgnoreCase" Result="[item]">
+                  <ui:Replace sap2010:Annotation.AnnotationText="Modify the string by removing any possible whitespace characters." BuilderPattern="\s" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[item]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;WHITESP&quot;,&quot;OperationName&quot;:&quot;Whitespace&quot;,&quot;OperationValue&quot;:&quot;\\s&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="\s" RegexOption="IgnoreCase" Result="[item]">
                     <ui:Replace.Replacement>
                       <InArgument x:TypeArguments="x:String">
                         <Literal x:TypeArguments="x:String" Value="" />
                       </InArgument>
                     </ui:Replace.Replacement>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </ui:Replace>
-                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ProcessNumber.xaml">
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Invokes the navigation workflow, processing the DUNS Number." DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="ProcessNumber.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InOutArgument x:TypeArguments="x:Boolean" x:Key="io_InputError">[io_InputError]</InOutArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_Sender">[in_Sender]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_DUNSNumber">[item]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_BotEmailAddress">[in_BotEmailAddress]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>
                 </Sequence>
               </TryCatch.Try>
