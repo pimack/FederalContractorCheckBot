@@ -60,7 +60,6 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="executeSAM" sap:VirtualizedContainerService.HintSize="670,1853" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -94,7 +93,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="6f4bbe57049a3675cf7cddccdf99599b" Selector="&lt;webctrl id='searchResultsID:j_idt167:0:viewDetails' tag='INPUT' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="44fb9016709c94743970b92a7f70c203" Selector="&lt;webctrl id='searchResultsID:j_idt166:0:viewDetails' tag='INPUT' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
